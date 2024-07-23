@@ -10,6 +10,7 @@ FROM node:18-alpine
 
 RUN npm install -g @mockoon/cli@8.3.0 
 # && npm audit fix --force
+RUN npm audit fix
 
 # Install curl for healthcheck and tzdata for timezone support.
 RUN apk --no-cache add curl tzdata
