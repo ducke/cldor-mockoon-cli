@@ -1,8 +1,18 @@
 FROM node:18-alpine
 
-ARG version=latest
+# ARG version=latest
 
-RUN npm install -g @mockoon/cli@8.3.0
+WORKDIR /app
+
+COPY package.json /app
+
+RUN npm install
+RUN npm audit fix 
+#--force
+
+#RUN npm install -g @mockoon/cli@8.3.0 
+# && npm audit fix --force
+#RUN npm audit fix
 
 # Install curl for healthcheck and tzdata for timezone support.
 RUN apk --no-cache add curl tzdata

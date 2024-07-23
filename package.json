@@ -2,9 +2,7 @@
   "dependencies": {
     "@mockoon/cli": "^8.3.0"
   },
-  {
   "overrides": {
-    "foo": "1.0.0"
+    "braces": "3.0.3"
   }
-}
 }
