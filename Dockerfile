@@ -1,8 +1,10 @@
 FROM node:18-alpine
 
-ARG version=latest
+# ARG version=latest
 
-COPY package.json .
+WORKDIR /app
+
+COPY package.json /app
 
 RUN npm install
 
